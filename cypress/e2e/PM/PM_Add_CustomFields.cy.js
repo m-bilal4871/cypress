@@ -16,14 +16,18 @@ describe('Project Management', () => {
       cy.get('.dropdown-menu.show > ul > :nth-child(1) > a').click()
       cy.get('.update-name').should('be.visible').contains('Edit Project ');
 
-      cy.get('#lnkPTRClick').click()
-      cy.get(10000)
+      cy.get('#lnkProjectCustomParams').click()
+      cy.wait(5000)
+      
       ///cy.get('[role=toolbar]').contains('[title=Teams]').click()
       //cy.get('[role=listbox]').should('be.visible').contains('[role=option]', 'Project Start Date').scrollIntoView().click();
-      //cy.title().should('eq', 'Teams').click()
+      //cy.title().should('eq', 'Add a row').click()
       //cy.get('[role=button]').contains('eq', 'Add a row').click()
-      cy.get('[role=presentation]').should('be.visible').find('tr').eq(1).find('td').eq(1)
-      cy.title().should('eq', 'Teams').click()
+      //cy.get('[role=presentation]').should('be.visible').find('tr').eq(1).find('td').eq(1)
+      //cy.title().should('eq', 'Teams').click()
+      //cy.get('#tabs').get('#lnkProjectCustomParams').get('[role=toolbar]').title().should('eq', 'Add a row').click()
+      cy.get('#tabs').get('#lnkProjectCustomParams').get('[role=toolbar]').contains('[title=Add a row]').click()
+      //cy.get('[role=toolbar]').title().should('eq', 'Add a row').click()
 
     });
   });

@@ -13,7 +13,7 @@ describe('Project Management', () => {
       cy.get('.update-name').should('be.visible').contains('Edit Project ');
 
       cy.get('#liAttachment').click()
-      cy.title().should('eq', 'Add New').click()
+      cy.title().should('eq', 'Column Chooser').click()
 
       cy.log("Test Case Pass");
     });
