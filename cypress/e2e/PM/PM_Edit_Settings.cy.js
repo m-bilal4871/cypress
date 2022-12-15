@@ -23,24 +23,30 @@ describe('Project Management', () => {
           cy.log('TimeZone is Enabled')
         }
       });
-
+      ////////////////////////////
       cy.get('#Color').click()
       cy.get('#TicketName').click()
-      //cy.title('eq', 'Calendar').click()
-      cy.get('h4').contains('General').click()
+      //cy.get('h4').contains('General').click()
       cy.get('h4').contains('Calendar').click()
+      cy.get('h4').contains('Currency').click()      
       ///////////////////////////////////////
+      //cy.get('#Sunday').log('Sunday')
       cy.get('#Sunday').then(($sun) => {
-        if ($sun.is(':check')) {
-          cy.get('#Sunday').uncheck(['Sunday'])
-          cy.log('pass')
+        if ($sun.is(':unchecked')) {
+          cy.wait(3000)
+          cy.get('#Sunday').click(['Sunday'])
+          cy.log('Sunday is unchecked')
         }
-        else {          
-          cy.get('#Sunday').check(['Sunday'])
+        else  {          
+          //cy.get('#Sunday').click(['Sunday'])
+          cy.wait(5000)
+          cy.log('Sunday is check')
         }
       });
-      /////////////////////////////////////////
-      cy.log('Pass')
+      ////////////////////////////////////////
+      cy.get('#txtShiftStartTime').click()
+      //cy.get('#btnSubmit_Configuration').click()
+      cy.log('Test Case Pass')
 
     });
   });
