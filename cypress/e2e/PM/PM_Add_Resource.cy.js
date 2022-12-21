@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 describe('Project Management', () => {
     it('Edit_Project', () => {
+      //var qatype = 'QATY'
+      const qaresourcetype = 'QA Team'
       cy.visit("http://192.168.3.39:9009/");
       // cy.log('Width:' + Cypress.config('viewportWidth'))
       // cy.log('Height:' + Cypress.config('viewportHeight'))
@@ -17,13 +19,20 @@ describe('Project Management', () => {
       cy.get('.update-name').should('be.visible').contains('Edit Project ');
 
       cy.get('#lnkPTRClick').click()
-      cy.get(10000)
-      ///cy.get('[role=toolbar]').contains('[title=Teams]').click()
-      //cy.get('[role=listbox]').should('be.visible').contains('[role=option]', 'Project Start Date').scrollIntoView().click();
-      //cy.title().should('eq', 'Teams').click()
-      //cy.get('[role=button]').contains('eq', 'Add a row').click()
-      cy.get('[role=presentation]').should('be.visible').find('tr').eq(1).find('td').eq(1)
-      cy.title().should('eq', 'Teams').click()
+      cy.wait(10000)
+      cy.log('pdsdaskak')
+      cy.get('#gridProjectResource').within(() => {
+        //cy.get('#gridProjectResource')
+        cy.get('[role=toolbar]').get('[title=Teams]').click({force:true})
+      })
+      
+      cy.get('#wGroupGrid').within(() => {
+        //cy.get('#gridProjectResource')
+        cy.get('[role=toolbar]').contains('Add a row').click({force:true})
+        cy.get('[role=presentation]')
+        cy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).type(qaresourcetype)
+      })
+
 
     });
   });
