@@ -13,8 +13,22 @@ describe('Project Management', () => {
       cy.get('.update-name').should('be.visible').contains('Edit Project ');
 
       cy.get('#liAttachment').click()
-      cy.title().should('eq', 'Column Chooser').click()
+      cy.get('#uploadListPartialViewId-70').within(() => {
+        cy.get('[role=toolbar]').get('[aria-label=plus]').as('csla')
+        cy.get('@csla').click({force:true})
+      })
+      
+      // cy.get('#uploadPartialViewId-70').within(() => {
+      //   cy.get('[role=button]').contains('Browse').click()
+      // })
+      cy.get('.dx-fileuploader-input-wrapper > .dx-fileuploader-button > .dx-button-content').attachFile("doc.txt");
 
+      cy.get('div.uploader-inner').attachFile("doc.txt")
+      .attachFile('video.mp4')
+      .attachFile('pdf.pdf');
+      //cy.get('#myform-70').attachFile("pic.PNG");
+      //cy.get('.fa fa-cloud-upload').attachFile("pic.PNG");
+      cy.wait(5000)
       cy.log("Test Case Pass");
     });
   });
