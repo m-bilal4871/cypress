@@ -7,7 +7,7 @@ describe('Project Management', () => {
       cy.viewport(1500, 700)
 
       cy.get('[type=text]').type("m.bilal");
-      cy.get('[type=password]').type("Bilal@123");
+      cy.get('[type=password]').type("Bilal@12345a");
       cy.get('[type=submit]').click();
       cy.url().should('eq', 'http://192.168.3.39:9009/Project/Project/List');
       cy.wait(4000)      
