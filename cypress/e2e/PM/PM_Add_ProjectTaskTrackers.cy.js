@@ -4,7 +4,7 @@ describe('Project Management', () => {
       beforeEach(() => {
         cy.viewport(2000, 1000)
       })
-    it('Edit Project Task Info', () => {
+    it('Add Project Task Trackers', () => {
         const qaresourcetype = 'QA Team'
         const qataskresourcename = 'James Bond'
         cy.visit("http://192.168.3.39:9009/");

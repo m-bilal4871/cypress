@@ -5,7 +5,7 @@ describe('Project Management', () => {
       cy.viewport(1500, 700)
 
       cy.get('[type=text]').type("m.bilal");
-      cy.get('[type=password]').type("Bilal@123");
+      cy.get('[type=password]').type("Bilal@12345a");
       cy.get('[type=submit]').click();
       cy.url().should('eq', 'http://192.168.3.39:9009/Project/Project/List');
       cy.wait(4000)      
@@ -16,24 +16,10 @@ describe('Project Management', () => {
 
       cy.get('#lnkProjectCustomParams').click()
       cy.wait(5000)
-      
-      ///cy.get('[role=toolbar]').contains('[title=Teams]').click()
-      //cy.get('[role=listbox]').should('be.visible').contains('[role=option]', 'Project Start Date').scrollIntoView().click();
-      //cy.title().should('eq', 'Add a row').click()
-      //cy.get('[role=button]').contains('eq', 'Add a row').click()
-      //cy.get('[role=presentation]').should('be.visible').find('tr').eq(1).find('td').eq(1)
-      //cy.title().should('eq', 'Teams').click()
-      //cy.get('#tabs').get('#lnkProjectCustomParams').get('[role=toolbar]').title().should('eq', 'Add a row').click()
-      //cy.get('#tabs').get('#lnkProjectCustomParams').get('[role=toolbar]').contains('[title=Add a row]').click()
-      //cy.get('[role=toolbar]').title().should('eq', 'Add a row').click()
-      //cy.get('#gridContainer').find('[title=Add a row]').click();
-      ///cy.get($("#gridFileInfo-19 div[title='Column Chooser']"))
-      ///cy.title().should('eq', 'Add a row').click()
 
       cy.get('#gridContainer').within(() => {
         cy.get('[role=toolbar]').contains('Add a row').click({force:true})
       })
-
       cy.get('[role=presentation]')
       cy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).click()
       cy.get('[role=listbox]').should('be.visible');

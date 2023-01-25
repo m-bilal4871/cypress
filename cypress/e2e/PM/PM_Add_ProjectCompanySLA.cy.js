@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 describe('Project Management', () => {
-    const VendorSLA = 'Vendor SLA'
+    const CompanySLA = 'Company SLA'
     const VendorName = 'Reliance'
     it('Add Vendor SLA Title', () => {
       cy.visit("http://192.168.3.39:9009/");
-      cy.viewport(1500, 700)
+      cy.viewport(2000, 1000)
 
       cy.get('[type=text]').type("m.bilal");
       cy.get('[type=password]').type("Bilal@12345a");
@@ -16,7 +16,7 @@ describe('Project Management', () => {
       cy.get('.dropdown-menu.show > ul > :nth-child(1) > a').click()
       cy.get('.update-name').should('be.visible').contains('Edit Project ');
 
-      cy.get('#liVendor').click()
+      cy.get('#liDeliveries').click()
       cy.wait(5000)
 
       cy.get('#SLAGrid').within(() => {
@@ -25,10 +25,7 @@ describe('Project Management', () => {
       })
       cy.get('[data-target="AssociateSla"]').should('be.visible')
 
-      cy.get('#Name').type(VendorSLA)
-      cy.get('#OwnerId').click()
-      cy.get('[role=listbox]').get('[role=option]')
-      cy.contains('[role=option]', VendorName).click();
+      cy.get('#Name').type(CompanySLA)
 
       cy.get('#SlaPriorityId').click()
       cy.get('[role=listbox]').get('[role=option]')
@@ -40,8 +37,8 @@ describe('Project Management', () => {
 
       cy.get('#btnsavesla').click()
 
-      cy.get('.title').then(function ($vendorsla) {
-        const Success = $vendorsla.text();
+      cy.get('.title').then(function ($comsla) {
+        const Success = $comsla.text();
         cy.log(Success);
         expect(Success).eq('Success');
       });    

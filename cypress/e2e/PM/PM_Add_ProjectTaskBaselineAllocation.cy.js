@@ -75,6 +75,7 @@ describe('Project Management', () => {
       }); 
       cy.log('Project Baseline Allocation added successfully') 
     });
+
    
     })
   });
