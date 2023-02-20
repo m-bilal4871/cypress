@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2023-01-26T06:45:13.331Z",
+    "end": "2023-01-26T06:48:28.707Z",
+    "duration": 195376,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "83922621-99f6-4506-8edf-a346b9c7c2a4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PM\\PM_Project_Dashboard.cy.js",
+      "file": "cypress\\e2e\\PM\\PM_Project_Dashboard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8733d561-aab5-462e-8953-bf67340565dc",
+          "title": "Project Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "fc9ff41d-5956-44f0-a27b-d90abe8a03ef",
+              "title": "Set Resolution",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Project Dashboard",
+                  "fullTitle": "Project Management Set Resolution Project Dashboard",
+                  "timedOut": null,
+                  "duration": 67635,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('[role=presentation]').find('tr').eq(4).find('td').eq(2).within(() => {\n  cy.get('.link').click();\n});\ncy.get('#project_dashboard_tabs').find('[data-target=\"#EntityTab\"]').click();",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "40358edd-ca18-474c-a099-6a83ae61948d",
+                  "parentUUID": "fc9ff41d-5956-44f0-a27b-d90abe8a03ef",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Associate Entities",
+                  "fullTitle": "Project Management Set Resolution Associate Entities",
+                  "timedOut": null,
+                  "duration": 46978,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('[role=presentation]').find('tr').eq(2).find('td').eq(2).within(() => {\n  cy.get('.link').click();\n});\ncy.get('#project_dashboard_tabs').find('[data-target=\"#EntityTab\"]').click();\ncy.wait(5000);\ncy.get('#projectSitesGridContainer').within(() => {\n  cy.get('[role=toolbar]').contains('Entities').click({\n    force: true\n  });\n});\ncy.get('#sitesGrid').within(() => {\n  cy.get('[role=toolbar]').contains('Associate Entities').click({\n    force: true\n  });\n});\ncy.get('#associates_sites').find('h4').should('be.visible').contains('Associate Entities');\ncy.get('#associates_sites').within(() => {\n  cy.get('[role=presentation]');\n  cy.get('[role=row]').find('td').get('[role=gridcell]').eq(1).click({\n    force: true\n  });\n});\ncy.get('#btnAssociate').click();\ncy.get('.title').then(function ($timeline) {\n  const Success = $timeline.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Entities associate successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "1e11b550-7c32-45d8-8605-3c577a4f5a93",
+                  "parentUUID": "fc9ff41d-5956-44f0-a27b-d90abe8a03ef",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add Region and Market on Entity",
+                  "fullTitle": "Project Management Set Resolution Add Region and Market on Entity",
+                  "timedOut": null,
+                  "duration": 38475,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[role=presentation]').find('[aria-rowindex=\"1\"]').find('[aria-colindex=\"14\"]').within(() => {\n  cy.get('[src=\"/Theme/AirViewX/images/general_icons/iconset/final/edit.svg\"]').click({\n    force: true,\n    multiple: true\n  });\n});\ncy.wait(5000);\ncy.get('h4').should('be.visible').contains('Edit Entity -');\ncy.get('#tabs').find('#modal_locationTab_li').click();\ncy.get('#entityLocationTabPartialView').find('[src=\"/Theme/AirViewX/images/ems/edit_icon.svg\"]').click();\ncy.get('#EntityCountryId').type('United');\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', /^United States$/).click({\n  force: true\n});\ncy.get('#EntityRegionId').type('West').wait(5000);\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'West').click({\n  force: true\n});\ncy.get('#EntityMarketId').click().type('cal').wait(5000);\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'California').click({\n  force: true\n});\ncy.get('#entityLocationTabPartialView').find('[src=\"/Theme/AirViewX/images/ems/save.svg\"]').click();\ncy.get('#btnEntityUpdate').click({\n  force: true\n});\ncy.log('Region and Markets are added on Entity  successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "3f82e613-b348-4875-86f1-e268117a29a8",
+                  "parentUUID": "fc9ff41d-5956-44f0-a27b-d90abe8a03ef",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Assign Manager",
+                  "fullTitle": "Project Management Set Resolution Assign Manager",
+                  "timedOut": null,
+                  "duration": 38063,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[role=presentation]').find('[aria-rowindex=\"1\"]').find('[aria-colindex=\"12\"]').click();\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'Bilal').click({\n  force: true\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "fef7ae5c-2fe0-4920-a153-2cb0d66b2a2b",
+                  "parentUUID": "fc9ff41d-5956-44f0-a27b-d90abe8a03ef",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "40358edd-ca18-474c-a099-6a83ae61948d",
+                "1e11b550-7c32-45d8-8605-3c577a4f5a93",
+                "3f82e613-b348-4875-86f1-e268117a29a8",
+                "fef7ae5c-2fe0-4920-a153-2cb0d66b2a2b"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 191151,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "charts": true,
+        "reportPageTitle": "Report",
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "longDate",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

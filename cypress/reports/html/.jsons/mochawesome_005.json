@@ -1,0 +1,194 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2023-01-26T04:24:55.779Z",
+    "end": "2023-01-26T04:26:48.610Z",
+    "duration": 112831,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "626b563e-0b57-44b0-8da6-efcf058b3f08",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PM\\PM_Project_Dashboard.cy.js",
+      "file": "cypress\\e2e\\PM\\PM_Project_Dashboard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "df32a6bb-f77d-473a-8981-4c5c3fcfb332",
+          "title": "Project Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "b3d23788-74c8-4f71-8df6-6bc95aa61193",
+              "title": "Set Resolution",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Project Dashboard",
+                  "fullTitle": "Project Management Set Resolution Project Dashboard",
+                  "timedOut": null,
+                  "duration": 42873,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('[role=presentation]').find('tr').eq(4).find('td').eq(2).within(() => {\n  cy.get('.link').click();\n});\ncy.get('#project_dashboard_tabs').find('[data-target=\"#EntityTab\"]').click();",
+                  "err": {},
+                  "uuid": "98991c8f-5965-4e47-bbfa-4b819ad45dc2",
+                  "parentUUID": "b3d23788-74c8-4f71-8df6-6bc95aa61193",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Associate Entities",
+                  "fullTitle": "Project Management Set Resolution Associate Entities",
+                  "timedOut": null,
+                  "duration": 35371,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\PM_Project_Dashboard.cy.js\\\\Project Management -- Set Resolution -- Associate Entities (failed).png\"\n      }\n    ]\n  ]\n}",
+                  "code": "cy.wait(4000);\ncy.get('[role=presentation]').find('tr').eq(2).find('td').eq(2).within(() => {\n  cy.get('.link').click();\n});\ncy.get('#project_dashboard_tabs').find('[data-target=\"#EntityTab\"]').click();\ncy.wait(5000);\ncy.get('#projectSitesGridContainer').within(() => {\n  cy.get('[role=toolbar]').contains('Entities').click({\n    force: true\n  });\n});\ncy.get('#sitesGrid').within(() => {\n  cy.get('[role=toolbar]').contains('Associate Entities').click({\n    force: true\n  });\n});\ncy.get('#associates_sites').find('h4').should('be.visible').contains('Associate Entities');\ncy.get('#associates_sites').within(() => {\n  cy.get('[role=presentation]');\n  cy.get('[role=row]').find('td').get('[role=gridcell]').eq(1).click({\n    force: true\n  });\n});\ncy.get('#btnAssociate').click();\ncy.get('.title').then(function ($timeline) {\n  const Success = $timeline.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Entities associate successfully');",
+                  "err": {
+                    "message": "AssertionError: expected 'Warning' to equal 'Success'",
+                    "estack": "AssertionError: expected 'Warning' to equal 'Success'\n    at Context.eval (webpack:///./cypress/e2e/PM/PM_Project_Dashboard.cy.js:53:26)",
+                    "diff": "- 'Warning'\n+ 'Success'\n"
+                  },
+                  "uuid": "bbb35dd9-cd13-4d39-aa01-81497dc19f84",
+                  "parentUUID": "b3d23788-74c8-4f71-8df6-6bc95aa61193",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add Region and Market on Entity",
+                  "fullTitle": "Project Management Set Resolution Add Region and Market on Entity",
+                  "timedOut": null,
+                  "duration": 11387,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\PM_Project_Dashboard.cy.js\\\\Project Management -- Set Resolution -- Add Region and Market on Entity (failed).png\"\n      }\n    ]\n  ]\n}",
+                  "code": "cy.get('[role=presentation]').find('[aria-rowindex=\"1\"]').find('[aria-colindex=\"14\"]').within(() => {\n  cy.get('[src=\"/Theme/AirViewX/images/general_icons/iconset/final/edit.svg\"]').click({\n    force: true,\n    multiple: true\n  });\n});\ncy.wait(5000);\ncy.get('h4').should('be.visible').contains('Edit Entity -');\ncy.get('#tabs').find('#modal_locationTab_li').click();\ncy.get('#entityLocationTabPartialView').find('[src=\"/Theme/AirViewX/images/ems/edit_icon.svg\"]').click();\ncy.get('#EntityCountryId').type('United');\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', /^United States$/).click({\n  force: true\n});\ncy.get('#EntityRegionId').type('West').wait(5000);\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'West').click({\n  force: true\n});\ncy.get('#EntityMarketId').click().type('cal').wait(5000);\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'California').click({\n  force: true\n});\ncy.get('#entityLocationTabPartialView').find('[src=\"/Theme/AirViewX/images/ems/save.svg\"]').click();\ncy.get('#btnEntityUpdate').click({\n  force: true\n});\ncy.log('Region and Markets are added on Entity  successfully');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[src=\"/Theme/AirViewX/images/general_icons/iconset/final/edit.svg\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[src=\"/Theme/AirViewX/images/general_icons/iconset/final/edit.svg\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/PM/PM_Project_Dashboard.cy.js:60:13)",
+                    "diff": null
+                  },
+                  "uuid": "67beea16-0f20-4a83-9aea-f00b7a7f1cf0",
+                  "parentUUID": "b3d23788-74c8-4f71-8df6-6bc95aa61193",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Assign Manager",
+                  "fullTitle": "Project Management Set Resolution Assign Manager",
+                  "timedOut": null,
+                  "duration": 13522,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\PM_Project_Dashboard.cy.js\\\\Project Management -- Set Resolution -- Assign Manager (failed).png\"\n      }\n    ]\n  ]\n}",
+                  "code": "cy.get('[role=presentation]').find('[aria-rowindex=\"1\"]').find('[aria-colindex=\"12\"]').click();\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'Bilal').click({\n  force: true\n});",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[role=listbox]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[role=listbox]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/PM/PM_Project_Dashboard.cy.js:87:11)",
+                    "diff": null
+                  },
+                  "uuid": "985b6d60-5111-470d-86ab-385a52f43162",
+                  "parentUUID": "b3d23788-74c8-4f71-8df6-6bc95aa61193",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "98991c8f-5965-4e47-bbfa-4b819ad45dc2"
+              ],
+              "failures": [
+                "bbb35dd9-cd13-4d39-aa01-81497dc19f84",
+                "67beea16-0f20-4a83-9aea-f00b7a7f1cf0",
+                "985b6d60-5111-470d-86ab-385a52f43162"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 103153,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

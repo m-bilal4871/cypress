@@ -2,6 +2,17 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    charts: true,
+    reportPageTitle: 'Report',
+    reportFilename: "[name]-report-[datetime]-[status]",
+    timestamp: "longDate",
+    overwrite: false,
+    html: true,
+    json: true,
+  },
   
   
   e2e: {
@@ -11,12 +22,11 @@ module.exports = defineConfig({
     },
     // setupNodeEvents(on, config) {
     //   config.specPattern = [
+    //     'cypress/e2e/Login/login.cy.js',
     //     'cypress/e2e/PM/PM_Project.cy.js',
     //     'cypress/e2e/PM/PM_ProjectTask.cy.js',
-    //     'cypress/e2e/PM/PM_ProjectDashboard.cy.js',
+    //     'cypress/e2e/PM/PM_Project_Dashboard.cy.js',
     //   ]
-    //   // IMPORTANT: need to return the changed config
-    //   // so Cypress knows about your changes
     //   return config
     // },
   },

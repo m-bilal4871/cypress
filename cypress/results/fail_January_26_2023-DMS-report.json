@@ -1,0 +1,113 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-01-26T06:31:23.550Z",
+    "end": "2023-01-26T06:31:41.764Z",
+    "duration": 18214,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf6384ce-8797-45fe-8bd4-89c3253649be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\DMS\\DMS.cy.js",
+      "file": "cypress\\e2e\\DMS\\DMS.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "441932eb-188f-40bc-af06-26ad7d410ec8",
+          "title": "Document Management System",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "DMS-View",
+              "fullTitle": "Document Management System DMS-View",
+              "timedOut": null,
+              "duration": 13201,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\DMS\\\\DMS.cy.js\\\\Document Management System -- DMS-View (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "cy.visit(\"http://192.168.3.39:9009/\");\ncy.get('[type=text]').type(\"m.bilal\");\ncy.get('[type=password]').type(\"Bilal@123\");\ncy.get('[type=submit]').click(); //cy.get(\".grid > :nth-child(1) > .buttons > .w-full\").click();\ncy.visit(\"http://192.168.3.39:9009/DMS/document/Index\"); //cy.url().should('include', '/DMS/document/Index')    \n//cy.get('.dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-icon').click({force: true})\n//cy.get('.dx-icon dx-icon-plus]').click({force:true})\ncy.get('[role=button]'); // & '[title=Add New]').click()\ncy.get('[title=Add New]').click();\ncy.log(\"Test Case Pass\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[role=button]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[role=button]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/DMS/DMS.cy.js:14:9)",
+                "diff": null
+              },
+              "uuid": "5f97fc65-587c-4091-b2ca-721f2f09fd22",
+              "parentUUID": "441932eb-188f-40bc-af06-26ad7d410ec8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5f97fc65-587c-4091-b2ca-721f2f09fd22"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13201,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "charts": true,
+        "reportPageTitle": "Report",
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "longDate",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

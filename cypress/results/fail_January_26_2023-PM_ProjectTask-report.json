@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2023-01-26T06:39:46.335Z",
+    "end": "2023-01-26T06:45:05.942Z",
+    "duration": 319607,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13fdb770-f158-4782-85b5-03293923455d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PM\\PM_ProjectTask.cy.js",
+      "file": "cypress\\e2e\\PM\\PM_ProjectTask.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8521a80f-44c0-4c92-b603-01ecf09cf30a",
+          "title": "Project Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "2f008673-2520-4fe4-b84b-489515f493da",
+              "title": "Set Resolution",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Edit Project Task Info",
+                  "fullTitle": "Project Management Set Resolution Edit Project Task Info",
+                  "timedOut": null,
+                  "duration": 83599,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > [aria-describedby=\"dx-col-146\"] > .icon-btn-only').click();\ncy.get('.dropdown-menu.show').contains('Edit').click();\ncy.get('.update-name').should('be.visible').contains('Edit Project ');\ncy.get('#lnkPTLClick').click();\ncy.wait(10000);\ncy.get('#workSpace').within(() => {\n  cy.get('.teamworkIcon').contains('R').click({\n    force: true\n  });\n});\ncy.get('#TWGanttArea').find('.taskEditRow').eq(1).within(() => {\n  cy.wait(3000);\n  cy.get('.timelineTaskNameTemplate').find('[title=Edit]').click();\n});\ncy.get('#ProjectTimelinePopup').find('#tasktitle').should('be.visible').contains('Edit Task');\ncy.get('#ProjectTask_Priority').click();\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'High').click();\ncy.get('#SeverityId').click();\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'Major').click();\ncy.get('#btn_Task_Save').click();\ncy.get('.title').then(function ($ptaskinfo) {\n  const Success = $ptaskinfo.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Project Task updated successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "57f94eb1-29de-42c3-b8b8-30628eefed01",
+                  "parentUUID": "2f008673-2520-4fe4-b84b-489515f493da",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Edit Project Task Custom Fields",
+                  "fullTitle": "Project Management Set Resolution Edit Project Task Custom Fields",
+                  "timedOut": null,
+                  "duration": 45711,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > [aria-describedby=\"dx-col-146\"] > .icon-btn-only').click();\ncy.get('.dropdown-menu.show').contains('Edit').click();\ncy.get('.update-name').should('be.visible').contains('Edit Project ');\ncy.get('#lnkPTLClick').click();\ncy.get('#workSpace').within(() => {\n  cy.get('.teamworkIcon').contains('R').click({\n    force: true\n  });\n});\ncy.get('#TWGanttArea').find('.taskEditRow').eq(1).within(() => {\n  cy.wait(5000);\n  cy.get('.timelineTaskNameTemplate').find('[title=Edit]').click();\n});\ncy.get('#ProjectTimelinePopup').find('#tasktitle').should('be.visible').contains('Edit Task');\ncy.get('#lnkprjtskcustomfield').click();\ncy.get('#gridContainer').within(() => {\n  cy.get('[role=toolbar]').contains('Add a row').click({\n    force: true\n  });\n});\ncy.wait(5000);\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).click();\ncy.get('[role=listbox]').find('[role=option]');\ncy.wait(2000);\ncy.contains('[role=option]', 'Text').click();\ncy.get('[role=presentation]').find('[role=row]').find('td').get('[role=gridcell]').eq(4).click();\ncy.get('[role=listbox]').find('[role=option]');\ncy.contains('[role=option]', 'Text').click();\ncy.get('[src=\"/Theme/AirViewX/images/general_icons/save-round.svg\"]').click();\ncy.get('.title').then(function ($pcustomfield) {\n  const Success = $pcustomfield.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Project Task Custom Fields added successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "8dc50c9e-9c41-4533-8dfa-fe75bce57b47",
+                  "parentUUID": "2f008673-2520-4fe4-b84b-489515f493da",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add Project Task Trackers",
+                  "fullTitle": "Project Management Set Resolution Add Project Task Trackers",
+                  "timedOut": null,
+                  "duration": 59898,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > [aria-describedby=\"dx-col-146\"] > .icon-btn-only').click();\ncy.get('.dropdown-menu.show').contains('Edit').click();\ncy.get('.update-name').should('be.visible').contains('Edit Project ');\ncy.get('#lnkPTLClick').click();\ncy.wait(10000);\ncy.get('#workSpace').within(() => {\n  cy.get('.teamworkIcon').contains('R').click({\n    force: true\n  });\n});\ncy.get('#TWGanttArea').find('.taskEditRow').eq(1).within(() => {\n  cy.wait(5000);\n  cy.get('.timelineTaskNameTemplate').find('[title=Edit]').click();\n});\ncy.get('#ProjectTimelinePopup').find('#tasktitle').should('be.visible').contains('Edit Task');\ncy.get('#lnkTTracker').click();\ncy.wait(5000);\ncy.get('#gridProjectTaskTracker').within(() => {\n  cy.get('[role=toolbar]').contains('Add a row').click({\n    force: true\n  });\n});\ncy.wait(5000);\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(2).as('ptcode').wait(1000);\ncy.get('@ptcode').type('PT1');\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).as('ptname');\ncy.get('@ptname').type('Project Tracker 1');\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(4).click().wait(2000);\ncy.get('[role=listbox]').get('[role=option]').should('be.visible');\ncy.contains('[role=option]', 'Equipments').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(5).click().wait(2000);\ncy.get('[role=listbox]').get('[role=option]').should('be.visible');\ncy.contains('[role=option]', 'Antenna').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(6).click().wait(2000);\ncy.get('[role=listbox]').get('[role=option]').should('be.visible');\ncy.contains('[role=option]', 'Repair').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(7);\ncy.get('[role=checkbox]').get('[aria-checked=\"false\"]').click({\n  multiple: true,\n  force: true\n});\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(7).get('[role=checkbox]').then($KPIcheck => {\n  if ($KPIcheck.is('[aria-checked=\"true\"]')) {\n    cy.get('[role=presentation]');\n    cy.get('[role=row]').find('td').get('[role=gridcell]').eq(8).click().wait(2000);\n    cy.get('[role=listbox]').get('[role=option]');\n    cy.contains('[role=option]', 'Manual').click();\n  }\n});\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(9).click().wait(2000);\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', /^AlphaNumeric$/).click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(12).click().as('tracker');\ncy.get('@tracker').type('25');\ncy.get('[src=\"/Theme/AirViewX/images/general_icons/save-round.svg\"]').click({\n  multiple: true,\n  force: true\n});\ncy.get('#btnPTTSubmit').click();\ncy.get('.title').then(function ($timeline) {\n  const Success = $timeline.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Project Task Tracker added successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "e4edfa85-25cc-44b4-8c52-6b8a0036193f",
+                  "parentUUID": "2f008673-2520-4fe4-b84b-489515f493da",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add Resources on Project Task",
+                  "fullTitle": "Project Management Set Resolution Add Resources on Project Task",
+                  "timedOut": null,
+                  "duration": 59452,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const qaresourcetype = 'QA Team';\nconst qataskresourcename = 'Bilal';\ncy.wait(4000);\ncy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > [aria-describedby=\"dx-col-146\"] > .icon-btn-only').click();\ncy.get('.dropdown-menu.show').contains('Edit').click();\ncy.get('.update-name').should('be.visible').contains('Edit Project ');\ncy.get('#lnkPTLClick').click();\ncy.wait(10000);\ncy.get('#workSpace').within(() => {\n  cy.get('.teamworkIcon').contains('R').click({\n    force: true\n  });\n});\ncy.get('#TWGanttArea').find('.taskEditRow').eq(1).within(() => {\n  cy.wait(5000);\n  cy.get('.timelineTaskNameTemplate').find('[title=Edit]').click();\n});\ncy.get('#ProjectTimelinePopup').find('#tasktitle').should('be.visible').contains('Edit Task');\ncy.get('#lnkTResource').click();\ncy.wait(5000);\ncy.get('#gridProjectTaskResource').within(() => {\n  cy.get('[role=toolbar]').contains('Add a row').click({\n    force: true\n  });\n});\ncy.wait(5000);\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).click();\ncy.wait(2000);\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).click();\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'People').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(1).click();\ncy.get('[role=group]').get('[role=treeitem]');\ncy.contains('[role=treeitem]', qataskresourcename).click();\ncy.get('[src=\"/Theme/AirViewX/images/general_icons/save-round.svg\"]').click({\n  multiple: true,\n  force: true\n});\ncy.log('Resource Add Successfull');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "16e38e5b-f09a-48ca-8910-f063e7e4a891",
+                  "parentUUID": "2f008673-2520-4fe4-b84b-489515f493da",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add Baseline Allocation on Project Task",
+                  "fullTitle": "Project Management Set Resolution Add Baseline Allocation on Project Task",
+                  "timedOut": null,
+                  "duration": 65553,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.wait(4000);\ncy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > [aria-describedby=\"dx-col-146\"] > .icon-btn-only').click();\ncy.get('.dropdown-menu.show').contains('Edit').click();\ncy.get('.update-name').should('be.visible').contains('Edit Project ');\ncy.get('#lnkPTLClick').click();\ncy.wait(10000);\ncy.get('#workSpace').within(() => {\n  cy.get('.teamworkIcon').contains('R').click({\n    force: true\n  });\n});\ncy.get('#TWGanttArea').find('.taskEditRow').eq(1).within(() => {\n  cy.wait(3000);\n  cy.get('.timelineTaskNameTemplate').find('[title=Edit]').click();\n});\ncy.get('#ProjectTimelinePopup').find('#tasktitle').should('be.visible').contains('Edit Task');\ncy.get('#lnkProjectTaskTimelineAllocation').click();\ncy.wait(5000);\ncy.get('#gridProjectTaskTimelineAllocation').within(() => {\n  cy.get('[role=toolbar]').contains('Add a row').click({\n    force: true\n  });\n});\ncy.wait(5000);\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(1).click({\n  force: true\n});\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'People').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(2).click({\n  force: true\n});\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'QA').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).click({\n  force: true\n});\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'QA').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(4).click({\n  force: true\n});\ncy.get('[role=listbox]').get('[role=option]');\ncy.contains('[role=option]', 'Manager').click();\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(5).click().as('nresource');\ncy.get('@nresource').type('5');\ncy.get('[role=presentation]');\ncy.get('[role=row]').find('td').get('[role=gridcell]').eq(5).click().as('allocation');\ncy.get('@allocation').type('25');\ncy.get('[src=\"/Theme/AirViewX/images/general_icons/save-round.svg\"]').click({\n  multiple: true,\n  force: true\n});\ncy.get('.title').then(function ($timeline) {\n  const Success = $timeline.text();\n  cy.log(Success);\n  expect(Success).eq('Success');\n});\ncy.log('Project Baseline Allocation added successfully');",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:144398:81\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6449:41\n    at tryCatcher (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:9440:18)\n    at _drainQueueStep (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6034:12)\n    at _drainQueue (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6027:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:6043:5)\n    at Async.drainQueues (http://192.168.3.39:9009/__cypress/runner/cypress_runner.js:5913:14)",
+                    "diff": null
+                  },
+                  "uuid": "809b296d-b63d-4949-8092-67d24fdc86d3",
+                  "parentUUID": "2f008673-2520-4fe4-b84b-489515f493da",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "57f94eb1-29de-42c3-b8b8-30628eefed01",
+                "8dc50c9e-9c41-4533-8dfa-fe75bce57b47",
+                "e4edfa85-25cc-44b4-8c52-6b8a0036193f",
+                "16e38e5b-f09a-48ca-8910-f063e7e4a891",
+                "809b296d-b63d-4949-8092-67d24fdc86d3"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 314213,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "charts": true,
+        "reportPageTitle": "Report",
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "longDate",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

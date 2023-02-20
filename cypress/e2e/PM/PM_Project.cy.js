@@ -184,6 +184,8 @@ describe('Project Management', () => {
     cy.wait(5000)
     cy.get('[role=presentation]')
     cy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).click()
+    cy.wait(2000)
+    
     cy.get('[role=listbox]').find('[role=option]')
     cy.contains('[role=option]', 'People').click({force:true});
     
@@ -241,6 +243,8 @@ describe('Project Management', () => {
     cy.wait(3000)
     cy.get('[role=presentation]')
     cy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).click()
+    cy.wait(2000)
+    //cy.get('[role=row]').find('td').get('[role=gridcell]').eq(3).click()
     cy.get('[role=listbox]').get('[role=option]')
     cy.contains('[role=option]', 'Text').click();
   

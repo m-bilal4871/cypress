@@ -218,6 +218,8 @@ const login = (name) => {
       cy.wait(5000)
       cy.get('[role=presentation]')
       cy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).click()
+      cy.wait(2000)
+      cy.get('[role=row]').find('td').get('[role=gridcell]').eq(0).click()
       cy.get('[role=listbox]').get('[role=option]')
       cy.contains('[role=option]', 'People').click();
         
